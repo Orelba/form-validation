@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="form-validation.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Form validation with the Constraint Validation API</h1>
+  </header>
+  <main>
+    <form id="user-info" action="#" novalidate>
+      <div class="input-wrapper">
+        <label for="email">EMAIL
+          <input type="email" name="email" id="email" minlength="8" required>
+          <span class="error" aria-live="polite"></span>
+        </label>
+      </div>
+
+      <div class="input-wrapper">
+        <label for="country">COUNTRY
+          <select name="country" id="country">
+            <option value="none" selected disabled></option>
+            <option value="Israel">Israel</option>
+            <option value="USA">United States</option>
+            <option value="England">England</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Colombia">Colombia</option>
+          </select>
+          <span class="error" aria-live="polite"></span>
+        </label>
+      </div>
+
+      <div class="input-wrapper">
+        <label for="zip">ZIPCODE
+          <input type="text" name="zip" id="zip" required>
+          <span class="error" aria-live="polite"></span>
+        </label>
+      </div>
+
+      <div class="input-wrapper">
+        <label for="pass">PASSWORD
+          <input type="password" name="pass" id="pass" minlength="8" required>
+          <span class="error" aria-live="polite"></span>
+        </label>
+      </div>
+
+      <div class="input-wrapper">
+        <label for="passconfirm">CONFIRM PASSWORD
+          <input type="password" name="passconfirm" id="passconfirm" minlength="8" required>
+          <span class="error" aria-live="polite"></span>
+        </label>
+      </div>
+    </form>
+
+    <button type="submit" form="user-info">Submit</button>
+  </main>
+
+</body>
+
+</html>

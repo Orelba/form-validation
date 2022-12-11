@@ -1,0 +1,105 @@
+:root {
+  --invalid-red: rgb(185, 28, 28);
+}
+
+html {
+  box-sizing: border-box;
+
+}
+
+html * {
+  font-family: 'Sora', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  padding: 30px;
+  color: rgb(18, 28, 43);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 300px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid rgba(94, 94, 94, 0.267);
+  border-radius: 3px;
+  outline: none;
+  height: 28px;
+  font-size: 0.9rem;
+  padding: 0 6px;
+  margin-top: 3px;
+}
+
+:is(input, select):focus {
+  border-color: rgba(47, 109, 226, 0.7);
+}
+
+input,
+button {
+  appearance: none;
+}
+
+.invalid {
+  border-color: var(--invalid-red);
+}
+
+.error {
+  font-size: 0.66rem;
+  color: var(--invalid-red);
+  position: absolute;
+  top: 48px;
+}
+
+button {
+  height: 34px;
+  width: 100px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgb(18, 28, 43);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(37, 54, 80);
+}
