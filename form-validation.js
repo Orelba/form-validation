@@ -59,7 +59,7 @@ function validateZipcodeByCountry() {
       ]
     }
     const constraint = new RegExp(constraints[country.value][0], '')
-    
+
     if (constraint.test(zip.value)) {
       return 'valid'
     } else {
@@ -113,6 +113,7 @@ function checkForm(e) {
     pass: [pass, showPassError],
     passConfirm: [passConfirm, showPassConfirmError]
   }
+  let isValid = true
 
   Object.values(formFields).forEach((val) => {
     if (!val[0].validity.valid) {
@@ -120,20 +121,26 @@ function checkForm(e) {
       val[1]()
       // Prevent form from submitting
       e.preventDefault()
+      isValid = false
     }
     // 'none' is the first empty value on the country select menu
     if (country.value === 'none') {
       showCountryError()
       e.preventDefault()
+      isValid = false
     }
     if (pass.value !== passConfirm.value) {
       showPassConfirmError()
       e.preventDefault()
+      isValid = false
     }
     if (!zip.validity.valid) {
       e.preventDefault()
+      isValid = false
     }
   })
+
+  if (isValid) alert('The form has been successfully sent!')
 }
 
 function showEmailError() {
